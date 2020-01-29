@@ -1,0 +1,107 @@
+@import "loader.css";
+
+@mixin ff {
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+}
+
+$primary-color: #F0DB4F;
+$secondary-color: #1E0555;
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  @include ff();
+  background: $secondary-color;
+}
+
+.quote-display {
+  margin: 0 calc(1rem + 2px) 1rem;
+  cursor: default;
+}
+
+.quote-input {
+  @include ff();
+  background: transparent;
+  border: 2px solid #A1922E;
+  outline: none;
+  width: 100%;
+  height: 8rem;
+  margin: auto;
+  padding: .5rem 1rem;
+  resize: none;
+  font-size: 1rem;
+
+  &:focus {
+    border-color: #000000;
+  }
+}
+
+.container {
+  position: relative;
+  background: $primary-color;
+  padding: 1rem;
+  border-radius: .5rem;
+  width: 700px;
+  max-width: 90%;
+
+  .info {
+    .btn {
+      position: absolute;
+      top: 5px;
+      right: 5px;
+      background: #ffffff;
+      border: 2px solid #a91f18;
+      width: 25px;
+      height: 25px;
+      text-align: center;
+      line-height: 21px;
+      font-weight: bold;
+
+      &:hover ~ .text {
+        display: block;
+      }
+    }
+    .text {
+      display: none;
+      position: absolute;
+      top: 4px;
+      right: 4px;
+      max-width: 240px;
+      background: #ffffff;
+      padding: 4px;
+      border-radius: 4px;
+      border: 2px solid #a91f18;
+      text-align: center;
+
+      &:hover {
+        display: block;
+      }
+    }
+  }
+}
+
+.timer {
+  position: absolute;
+  top: 3rem;
+  font-size: 3rem;
+  color: $primary-color;
+  font-weight: bold;
+  cursor: default;
+}
+
+.correct {
+  color: #00ff00;
+}
+
+.incorrect {
+  color: #ff0000;
+  text-decoration: underline;
+}
