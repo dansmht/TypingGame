@@ -2,7 +2,7 @@ document.ondragstart = () => false
 document.onselectstart = () => false
 document.oncontextmenu = () => false
 
-const URL = 'http://api.quotable.io/random'
+const URL = 'https://api.quotable.io/random'
 const quoteDisplayElement = document.querySelector('.quote-display')
 const quoteInputElement = document.querySelector('.quote-input')
 const timerElement = document.querySelector('.timer')
